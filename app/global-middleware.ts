@@ -1,17 +1,17 @@
-import { defineMiddleware } from "vinxi/http";
+import { defineMiddleware } from 'vinxi/http'
 
-import type { CloudflareEnv } from "./libs/cloudflare";
+import type { CloudflareEnv } from './libs/cloudflare'
 
 export default defineMiddleware({
   onRequest: async (event) => {
     if (import.meta.env.DEV) {
-      const { getPlatformProxy } = await import("wrangler");
+      const { getPlatformProxy } = await import('wrangler')
 
-      const proxy = await getPlatformProxy<CloudflareEnv>();
+      const proxy = await getPlatformProxy<CloudflareEnv>()
 
-      event.context.cloudflare = proxy;
+      event.context.cloudflare = proxy
 
-      await proxy.dispose();
+      await proxy.dispose()
     }
   },
-});
+})
