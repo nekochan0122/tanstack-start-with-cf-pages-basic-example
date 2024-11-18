@@ -18,7 +18,7 @@ pages_build_output_dir = "./dist"
 VITE_DEPLOY_URL = "http://localhost:3000"
 
 [env.production.vars]
-VITE_DEPLOY_URL = "https://tanstack-start-with-cf-pages-basic-example.pages.dev/"
+VITE_DEPLOY_URL = "https://tanstack-start-with-cf-pages-basic-example.pages.dev"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
