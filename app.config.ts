@@ -6,7 +6,7 @@ import type { App } from 'vinxi'
 import { parseEnv } from './app/libs/env'
 import { getCloudflareProxyEnv, isInCloudflareCI } from './app/libs/cloudflare'
 
-// await parseEnv()
+await parseEnv()
 
 const app = defineConfig({
   server: {
@@ -16,7 +16,7 @@ const app = defineConfig({
     },
   },
   vite: {
-    // define: await proxyCloudflareEnv(),
+    define: await proxyCloudflareEnv(),
     plugins: [
       tsConfigPaths({
         projects: ['./tsconfig.json'],
@@ -55,5 +55,4 @@ function withGlobalMiddleware(app: App) {
   }
 }
 
-// export default withGlobalMiddleware(app)
-export default app
+export default withGlobalMiddleware(app)
